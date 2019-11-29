@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Basic Page Info -->
+	<meta charset="utf-8">
+	<title>DeskApp Dashboard</title>
+
+	<!-- Site favicon -->
+	<!-- <link rel="shortcut icon" href="images/favicon.ico"> -->
+
+	<!-- Mobile Specific Metas -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- Google Font -->
+	<link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,600,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+	<!-- CSS -->
+	<link rel="stylesheet" href="vendors/styles/style.css">
+
+	
+	<link rel="stylesheet" type="text/css" href="src/plugins/datatables/media/css/jquery.dataTables.css">
+	<link rel="stylesheet" type="text/css" href="src/plugins/datatables/media/css/dataTables.bootstrap4.css">
+	<link rel="stylesheet" type="text/css" href="src/plugins/datatables/media/css/responsive.dataTables.css">
+</head>
+<body>
+		<div class="pre-loader"></div>
+	<div class="header clearfix">
+		<div class="header-right">
+			<div class="brand-logo">
+				<a href="index.php">
+					<img src="vendors/images/logo.png" alt="" class="mobile-logo">
+				</a>
+			</div>
+			<div class="menu-icon">
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+			<div class="user-info-dropdown">
+				<div class="dropdown">
+					<a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown">
+						<span class="user-icon"><i class="fa fa-user-o"></i></span>
+						<span class="user-name">Johnny Brown</span>
+					</a>
+					<div class="dropdown-menu dropdown-menu-right">
+						<a class="dropdown-item" href="profile.php"><i class="fa fa-user-md" aria-hidden="true"></i> Profile</a>
+						<a class="dropdown-item" href="profile.php"><i class="fa fa-cog" aria-hidden="true"></i> Setting</a>
+						<a class="dropdown-item" href="faq.php"><i class="fa fa-question" aria-hidden="true"></i> Help</a>
+						<a class="dropdown-item" href="login.php"><i class="fa fa-sign-out" aria-hidden="true"></i> Log Out</a>
+					</div>
+				</div>
+			</div>
+			<div class="user-notification">
+				<div class="dropdown">
+					<a class="dropdown-toggle no-arrow" href="#" role="button" data-toggle="dropdown">
+						<i class="fa fa-bell" aria-hidden="true"></i>
+						<span class="badge notification-active"></span>
+					</a>
+					<div class="dropdown-menu dropdown-menu-right">
+						<div class="notification-list mx-h-350 customscroll">
+							<ul>
+								<li>
+									<a href="#">
+										<img src="vendors/images/img.jpg" alt="">
+										<h3 class="clearfix">John Doe <span>3 mins ago</span></h3>
+										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed...</p>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<img src="vendors/images/img.jpg" alt="">
+										<h3 class="clearfix">John Doe <span>3 mins ago</span></h3>
+										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed...</p>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<img src="vendors/images/img.jpg" alt="">
+										<h3 class="clearfix">John Doe <span>3 mins ago</span></h3>
+										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed...</p>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<img src="vendors/images/img.jpg" alt="">
+										<h3 class="clearfix">John Doe <span>3 mins ago</span></h3>
+										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed...</p>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<img src="vendors/images/img.jpg" alt="">
+										<h3 class="clearfix">John Doe <span>3 mins ago</span></h3>
+										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed...</p>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<img src="vendors/images/img.jpg" alt="">
+										<h3 class="clearfix">John Doe <span>3 mins ago</span></h3>
+										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed...</p>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<img src="vendors/images/img.jpg" alt="">
+										<h3 class="clearfix">John Doe <span>3 mins ago</span></h3>
+										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed...</p>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+		<div class="left-side-bar">
+		<div class="brand-logo">
+			<a href="index.php">
+				<img src="vendors/images/deskapp-logo.png" alt="">
+			</a>
+		</div>
+		<div class="menu-block customscroll">
+			<div class="sidebar-menu">
+				<ul id="accordion-menu">
+					<li class="dropdown">
+						<a href="javascript:;" class="dropdown-toggle">
+							<span class="fa fa-home"></span><span class="mtext">Home</span>
+						</a>
+						<ul class="submenu">
+							<li><a href="index.php">Dashboard style 1</a></li>
+							<li><a href="index2.php">Dashboard style 2</a></li>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a href="javascript:;" class="dropdown-toggle">
+							<span class="fa fa-pencil"></span><span class="mtext">Forms</span>
+						</a>
+						<ul class="submenu">
+							<li><a href="form-basic.php">Form Basic</a></li>
+							<li><a href="advanced-components.php">Advanced Components</a></li>
+							<li><a href="form-wizard.php">Form Wizard</a></li>
+							<li><a href="html5-editor.php">HTML5 Editor</a></li>
+							<li><a href="form-pickers.php">Form Pickers</a></li>
+							<li><a href="image-cropper.php">Image Cropper</a></li>
+							<li><a href="image-dropzone.php">Image Dropzone</a></li>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a href="javascript:;" class="dropdown-toggle">
+							<span class="fa fa-table"></span><span class="mtext">Tables</span>
+						</a>
+						<ul class="submenu">
+							<li><a href="basic-table.php">Basic Tables</a></li>
+							<li><a href="datatable.php">DataTables</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="calendar.php" class="dropdown-toggle no-arrow">
+							<span class="fa fa-calendar-o"></span><span class="mtext">Calendar</span>
+						</a>
+					</li>
+					<li class="dropdown">
+						<a href="javascript:;" class="dropdown-toggle">
+							<span class="fa fa-desktop"></span><span class="mtext"> UI Elements </span>
+						</a>
+						<ul class="submenu">
+							<li><a href="ui-buttons.php">Buttons</a></li>
+							<li><a href="ui-cards.php">Cards</a></li>
+							<li><a href="ui-cards-hover.php">Cards Hover</a></li>
+							<li><a href="ui-modals.php">Modals</a></li>
+							<li><a href="ui-tabs.php">Tabs</a></li>
+							<li><a href="ui-tooltip-popover.php">Tooltip &amp; Popover</a></li>
+							<li><a href="ui-sweet-alert.php">Sweet Alert</a></li>
+							<li><a href="ui-notification.php">Notification</a></li>
+							<li><a href="ui-timeline.php">Timeline</a></li>
+							<li><a href="ui-progressbar.php">Progressbar</a></li>
+							<li><a href="ui-typography.php">Typography</a></li>
+							<li><a href="ui-list-group.php">List group</a></li>
+							<li><a href="ui-range-slider.php">Range slider</a></li>
+							<li><a href="ui-carousel.php">Carousel</a></li>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a href="javascript:;" class="dropdown-toggle">
+							<span class="fa fa-paint-brush"></span><span class="mtext">Icons</span>
+						</a>
+						<ul class="submenu">
+							<li><a href="font-awesome.php">FontAwesome Icons</a></li>
+							<li><a href="foundation.php">Foundation Icons</a></li>
+							<li><a href="ionicons.php">Ionicons Icons</a></li>
+							<li><a href="themify.php">Themify Icons</a></li>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a href="javascript:;" class="dropdown-toggle">
+							<span class="fa fa-plug"></span><span class="mtext">Additional Pages</span>
+						</a>
+						<ul class="submenu">
+							<li><a href="video-player.php">Video Player</a></li>
+							<li><a href="login.php">Login</a></li>
+							<li><a href="forgot-password.php">Forgot Password</a></li>
+							<li><a href="reset-password.php">Reset Password</a></li>
+							<li><a href="403.php">403</a></li>
+							<li><a href="404.php">404</a></li>
+							<li><a href="500.php">500</a></li>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a href="javascript:;" class="dropdown-toggle">
+							<span class="fa fa-pie-chart"></span><span class="mtext">Charts</span>
+						</a>
+						<ul class="submenu">
+							<li><a href="highchart.php">Highchart</a></li>
+							<li><a href="knob-chart.php">jQuery Knob</a></li>
+							<li><a href="jvectormap.php">jvectormap</a></li>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a href="javascript:;" class="dropdown-toggle">
+							<span class="fa fa-clone"></span><span class="mtext">Extra Pages</span>
+						</a>
+						<ul class="submenu">
+							<li><a href="blank.php">Blank</a></li>
+							<li><a href="contact-directory.php">Contact Directory</a></li>
+							<li><a href="blog.php">Blog</a></li>
+							<li><a href="blog-detail.php">Blog Detail</a></li>
+							<li><a href="product.php">Product</a></li>
+							<li><a href="product-detail.php">Product Detail</a></li>
+							<li><a href="faq.php">FAQ</a></li>
+							<li><a href="profile.php">Profile</a></li>
+							<li><a href="gallery.php">Gallery</a></li>
+							<li><a href="pricing-table.php">Pricing Tables</a></li>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a href="javascript:;" class="dropdown-toggle">
+							<span class="fa fa-list"></span><span class="mtext">Multi Level Menu</span>
+						</a>
+						<ul class="submenu">
+							<li><a href="javascript:;">Level 1</a></li>
+							<li><a href="javascript:;">Level 1</a></li>
+							<li><a href="javascript:;">Level 1</a></li>
+							<li class="dropdown">
+								<a href="javascript:;" class="dropdown-toggle">
+									<span class="fa fa-plug"></span><span class="mtext">Level 2</span>
+								</a>
+								<ul class="submenu child">
+									<li><a href="javascript:;">Level 2</a></li>
+									<li><a href="javascript:;">Level 2</a></li>
+								</ul>
+							</li>
+							<li><a href="javascript:;">Level 1</a></li>
+							<li><a href="javascript:;">Level 1</a></li>
+							<li><a href="javascript:;">Level 1</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="sitemap.php" class="dropdown-toggle no-arrow">
+							<span class="fa fa-sitemap"></span><span class="mtext">Sitemap</span>
+						</a>
+					</li>
+					<li>
+						<a href="chat.php" class="dropdown-toggle no-arrow">
+							<span class="fa fa-comments-o"></span><span class="mtext">Chat <span class="fi-burst-new text-danger new"></span></span>
+						</a>
+					</li>
+					<li>
+						<a href="invoice.php" class="dropdown-toggle no-arrow">
+							<span class="fa fa-map-o"></span><span class="mtext">Invoice</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="main-container">
+		<div class="pd-ltr-20 customscroll customscroll-10-p height-100-p xs-pd-20-10">
+			<div class="min-height-200px">
+				<div class="page-header">
+					<div class="row">
+						<div class="col-md-6 col-sm-12">
+							<div class="title">
+								<h4>DataTable</h4>
+							</div>
+							<nav aria-label="breadcrumb" role="navigation">
+								<ol class="breadcrumb">
+									<li class="breadcrumb-item"><a href="index.php">Home</a></li>
+									<li class="breadcrumb-item active" aria-current="page">DataTable</li>
+								</ol>
+							</nav>
+						</div>
+						<div class="col-md-6 col-sm-12 text-right">
+							<div class="dropdown">
+								<a class="btn btn-primary dropdown-toggle" href="#" role="button" data-toggle="dropdown">
+									January 2018
+								</a>
+								<div class="dropdown-menu dropdown-menu-right">
+									<a class="dropdown-item" href="#">Export List</a>
+									<a class="dropdown-item" href="#">Policies</a>
+									<a class="dropdown-item" href="#">View Assets</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Simple Datatable start -->
+				<div class="pd-20 bg-white border-radius-4 box-shadow mb-30">
+					<div class="clearfix mb-20">
+						<div class="pull-left">
+							<h5 class="text-blue">Data Table Simple</h5>
+							<p class="font-14">you can find more options <a class="text-primary" href="https://datatables.net/" target="_blank">Click Here</a></p>
+						</div>
+					</div>
+					<div class="row">
+						<table class="data-table stripe hover nowrap">
+							<thead>
+								<tr>
+									<th class="table-plus datatable-nosort">Name</th>
+									<th>Age</th>
+									<th>Office</th>
+									<th>Address</th>
+									<th>Start Date</th>
+									<th class="datatable-nosort">Action</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="table-plus">Gloria F. Mead</td>
+									<td>25</td>
+									<td>Sagittarius</td>
+									<td>2829 Trainer Avenue Peoria, IL 61602 </td>
+									<td>29-03-2018</td>
+									<td>
+										<div class="dropdown">
+											<a class="btn btn-outline-primary dropdown-toggle" href="#" role="button" data-toggle="dropdown">
+												<i class="fa fa-ellipsis-h"></i>
+											</a>
+											<div class="dropdown-menu dropdown-menu-right">
+												<a class="dropdown-item" href="#"><i class="fa fa-eye"></i> View</a>
+												<a class="dropdown-item" href="#"><i class="fa fa-pencil"></i> Edit</a>
+												<a class="dropdown-item" href="#"><i class="fa fa-trash"></i> Delete</a>
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="table-plus">Andrea J. Cagle</td>
+									<td>30</td>
+									<td>Gemini</td>
+									<td>1280 Prospect Valley Road Long Beach, CA 90802 </td>
+									<td>29-03-2018</td>
+									<td>
+										<div class="dropdown">
+											<a class="btn btn-outline-primary dropdown-toggle" href="#" role="button" data-toggle="dropdown">
+												<i class="fa fa-ellipsis-h"></i>
+											</a>
+											<div class="dropdown-menu dropdown-menu-right">
+												<a class="dropdown-item" href="#"><i class="fa fa-eye"></i> View</a>
+												<a class="dropdown-item" href="#"><i class="fa fa-pencil"></i> Edit</a>
+												<a class="dropdown-item" href="#"><i class="fa fa-trash"></i> Delete</a>
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="table-plus">Andrea J. Cagle</td>
+									<td>20</td>
+									<td>Gemini</td>
+									<td>2829 Trainer Avenue Peoria, IL 61602 </td>
+									<td>29-03-2018</td>
+									<td>
+										<div class="dropdown">
+											<a class="btn btn-outline-primary dropdown-toggle" href="#" role="button" data-toggle="dropdown">
+												<i class="fa fa-ellipsis-h"></i>
+											</a>
+											<div class="dropdown-menu dropdown-menu-right">
+												<a class="dropdown-item" href="#"><i class="fa fa-eye"></i> View</a>
+												<a class="dropdown-item" href="#"><i class="fa fa-pencil"></i> Edit</a>
+												<a class="dropdown-item" href="#"><i class="fa fa-trash"></i> Delete</a>
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="table-plus">Andrea J. Cagle</td>
+									<td>30</td>
+									<td>Sagittarius</td>
+									<td>1280 Prospect Valley Road Long Beach, CA 90802 </td>
+									<td>29-03-2018</td>
+									<td>
+										<div class="dropdown">
+											<a class="btn btn-outline-primary dropdown-toggle" href="#" role="button" data-toggle="dropdown">
+												<i class="fa fa-ellipsis-h"></i>
+											</a>
+											<div class="dropdown-menu dropdown-menu-right">
+												<a class="dropdown-item" href="#"><i class="fa fa-eye"></i> View</a>
+												<a class="dropdown-item" href="#"><i class="fa fa-pencil"></i> Edit</a>
+												<a class="dropdown-item" href="#"><i class="fa fa-trash"></i> Delete</a>
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="table-plus">Andrea J. Cagle</td>
+									<td>25</td>
+									<td>Gemini</td>
+									<td>2829 Trainer Avenue Peoria, IL 61602 </td>
+									<td>29-03-2018</td>
+									<td>
+										<div class="dropdown">
+											<a class="btn btn-outline-primary dropdown-toggle" href="#" role="button" data-toggle="dropdown">
+												<i class="fa fa-ellipsis-h"></i>
+											</a>
+											<div class="dropdown-menu dropdown-menu-right">
+												<a class="dropdown-item" href="#"><i class="fa fa-eye"></i> View</a>
+												<a class="dropdown-item" href="#"><i class="fa fa-pencil"></i> Edit</a>
+												<a class="dropdown-item" href="#"><i class="fa fa-trash"></i> Delete</a>
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="table-plus">Andrea J. Cagle</td>
+									<td>20</td>
+									<td>Sagittarius</td>
+									<td>1280 Prospect Valley Road Long Beach, CA 90802 </td>
+									<td>29-03-2018</td>
+									<td>
+										<div class="dropdown">
+											<a class="btn btn-outline-primary dropdown-toggle" href="#" role="button" data-toggle="dropdown">
+												<i class="fa fa-ellipsis-h"></i>
+											</a>
+											<div class="dropdown-menu dropdown-menu-right">
+												<a class="dropdown-item" href="#"><i class="fa fa-eye"></i> View</a>
+												<a class="dropdown-item" href="#"><i class="fa fa-pencil"></i> Edit</a>
+												<a class="dropdown-item" href="#"><i class="fa fa-trash"></i> Delete</a>
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="table-plus">Andrea J. Cagle</td>
+									<td>18</td>
+									<td>Gemini</td>
+									<td>1280 Prospect Valley Road Long Beach, CA 90802 </td>
+									<td>29-03-2018</td>
+									<td>
+										<div class="dropdown">
+											<a class="btn btn-outline-primary dropdown-toggle" href="#" role="button" data-toggle="dropdown">
+												<i class="fa fa-ellipsis-h"></i>
+											</a>
+											<div class="dropdown-menu dropdown-menu-right">
+												<a class="dropdown-item" href="#"><i class="fa fa-eye"></i> View</a>
+												<a class="dropdown-item" href="#"><i class="fa fa-pencil"></i> Edit</a>
+												<a class="dropdown-item" href="#"><i class="fa fa-trash"></i> Delete</a>
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="table-plus">Andrea J. Cagle</td>
+									<td>30</td>
+									<td>Sagittarius</td>
+									<td>1280 Prospect Valley Road Long Beach, CA 90802 </td>
+									<td>29-03-2018</td>
+									<td>
+										<div class="dropdown">
+											<a class="btn btn-outline-primary dropdown-toggle" href="#" role="button" data-toggle="dropdown">
+												<i class="fa fa-ellipsis-h"></i>
+											</a>
+											<div class="dropdown-menu dropdown-menu-right">
+												<a class="dropdown-item" href="#"><i class="fa fa-eye"></i> View</a>
+												<a class="dropdown-item" href="#"><i class="fa fa-pencil"></i> Edit</a>
+												<a class="dropdown-item" href="#"><i class="fa fa-trash"></i> Delete</a>
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="table-plus">Andrea J. Cagle</td>
+									<td>30</td>
+									<td>Sagittarius</td>
+									<td>1280 Prospect Valley Road Long Beach, CA 90802 </td>
+									<td>29-03-2018</td>
+									<td>
+										<div class="dropdown">
+											<a class="btn btn-outline-primary dropdown-toggle" href="#" role="button" data-toggle="dropdown">
+												<i class="fa fa-ellipsis-h"></i>
+											</a>
+											<div class="dropdown-menu dropdown-menu-right">
+												<a class="dropdown-item" href="#"><i class="fa fa-eye"></i> View</a>
+												<a class="dropdown-item" href="#"><i class="fa fa-pencil"></i> Edit</a>
+												<a class="dropdown-item" href="#"><i class="fa fa-trash"></i> Delete</a>
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="table-plus">Andrea J. Cagle</td>
+									<td>30</td>
+									<td>Gemini</td>
+									<td>1280 Prospect Valley Road Long Beach, CA 90802 </td>
+									<td>29-03-2018</td>
+									<td>
+										<div class="dropdown">
+											<a class="btn btn-outline-primary dropdown-toggle" href="#" role="button" data-toggle="dropdown">
+												<i class="fa fa-ellipsis-h"></i>
+											</a>
+											<div class="dropdown-menu dropdown-menu-right">
+												<a class="dropdown-item" href="#"><i class="fa fa-eye"></i> View</a>
+												<a class="dropdown-item" href="#"><i class="fa fa-pencil"></i> Edit</a>
+												<a class="dropdown-item" href="#"><i class="fa fa-trash"></i> Delete</a>
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="table-plus">Andrea J. Cagle</td>
+									<td>30</td>
+									<td>Gemini</td>
+									<td>1280 Prospect Valley Road Long Beach, CA 90802 </td>
+									<td>29-03-2018</td>
+									<td>
+										<div class="dropdown">
+											<a class="btn btn-outline-primary dropdown-toggle" href="#" role="button" data-toggle="dropdown">
+												<i class="fa fa-ellipsis-h"></i>
+											</a>
+											<div class="dropdown-menu dropdown-menu-right">
+												<a class="dropdown-item" href="#"><i class="fa fa-eye"></i> View</a>
+												<a class="dropdown-item" href="#"><i class="fa fa-pencil"></i> Edit</a>
+												<a class="dropdown-item" href="#"><i class="fa fa-trash"></i> Delete</a>
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="table-plus">Andrea J. Cagle</td>
+									<td>30</td>
+									<td>Gemini</td>
+									<td>1280 Prospect Valley Road Long Beach, CA 90802 </td>
+									<td>29-03-2018</td>
+									<td>
+										<div class="dropdown">
+											<a class="btn btn-outline-primary dropdown-toggle" href="#" role="button" data-toggle="dropdown">
+												<i class="fa fa-ellipsis-h"></i>
+											</a>
+											<div class="dropdown-menu dropdown-menu-right">
+												<a class="dropdown-item" href="#"><i class="fa fa-eye"></i> View</a>
+												<a class="dropdown-item" href="#"><i class="fa fa-pencil"></i> Edit</a>
+												<a class="dropdown-item" href="#"><i class="fa fa-trash"></i> Delete</a>
+											</div>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<!-- Simple Datatable End -->
+				<!-- multiple select row Datatable start -->
+				<div class="pd-20 bg-white border-radius-4 box-shadow mb-30">
+					<div class="clearfix mb-20">
+						<div class="pull-left">
+							<h5 class="text-blue">Data Table with multiple select row</h5>
+						</div>
+					</div>
+					<div class="row">
+						<table class="data-table stripe hover multiple-select-row nowrap">
+							<thead>
+								<tr>
+									<th class="table-plus datatable-nosort">Name</th>
+									<th>Age</th>
+									<th>Office</th>
+									<th>Address</th>
+									<th>Start Date</th>
+									<th>Salart</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="table-plus">Gloria F. Mead</td>
+									<td>25</td>
+									<td>Sagittarius</td>
+									<td>2829 Trainer Avenue Peoria, IL 61602 </td>
+									<td>29-03-2018</td>
+									<td>$162,700</td>
+								</tr>
+								<tr>
+									<td class="table-plus">Andrea J. Cagle</td>
+									<td>30</td>
+									<td>Gemini</td>
+									<td>1280 Prospect Valley Road Long Beach, CA 90802 </td>
+									<td>29-03-2018</td>
+									<td>$162,700</td>
+								</tr>
+								<tr>
+									<td class="table-plus">Andrea J. Cagle</td>
+									<td>20</td>
+									<td>Gemini</td>
+									<td>2829 Trainer Avenue Peoria, IL 61602 </td>
+									<td>29-03-2018</td>
+									<td>$162,700</td>
+								</tr>
+								<tr>
+									<td class="table-plus">Andrea J. Cagle</td>
+									<td>30</td>
+									<td>Sagittarius</td>
+									<td>1280 Prospect Valley Road Long Beach, CA 90802 </td>
+									<td>29-03-2018</td>
+									<td>$162,700</td>
+								</tr>
+								<tr>
+									<td class="table-plus">Andrea J. Cagle</td>
+									<td>25</td>
+									<td>Gemini</td>
+									<td>2829 Trainer Avenue Peoria, IL 61602 </td>
+									<td>29-03-2018</td>
+									<td>$162,700</td>
+								</tr>
+								<tr>
+									<td class="table-plus">Andrea J. Cagle</td>
+									<td>20</td>
+									<td>Sagittarius</td>
+									<td>1280 Prospect Valley Road Long Beach, CA 90802 </td>
+									<td>29-03-2018</td>
+									<td>$162,700</td>
+								</tr>
+								<tr>
+									<td class="table-plus">Andrea J. Cagle</td>
+									<td>18</td>
+									<td>Gemini</td>
+									<td>1280 Prospect Valley Road Long Beach, CA 90802 </td>
+									<td>29-03-2018</td>
+									<td>$162,700</td>
+								</tr>
+								<tr>
+									<td class="table-plus">Andrea J. Cagle</td>
+									<td>30</td>
+									<td>Sagittarius</td>
+									<td>1280 Prospect Valley Road Long Beach, CA 90802 </td>
+									<td>29-03-2018</td>
+									<td>$162,700</td>
+								</tr>
+								<tr>
+									<td class="table-plus">Andrea J. Cagle</td>
+									<td>30</td>
+									<td>Sagittarius</td>
+									<td>1280 Prospect Valley Road Long Beach, CA 90802 </td>
+									<td>29-03-2018</td>
+									<td>$162,700</td>
+								</tr>
+								<tr>
+									<td class="table-plus">Andrea J. Cagle</td>
+									<td>30</td>
+									<td>Gemini</td>
+									<td>1280 Prospect Valley Road Long Beach, CA 90802 </td>
+									<td>29-03-2018</td>
+									<td>$162,700</td>
+								</tr>
+								<tr>
+									<td class="table-plus">Andrea J. Cagle</td>
+									<td>30</td>
+									<td>Gemini</td>
+									<td>1280 Prospect Valley Road Long Beach, CA 90802 </td>
+									<td>29-03-2018</td>
+									<td>$162,700</td>
+								</tr>
+								<tr>
+									<td class="table-plus">Andrea J. Cagle</td>
+									<td>30</td>
+									<td>Gemini</td>
+									<td>1280 Prospect Valley Road Long Beach, CA 90802 </td>
+									<td>29-03-2018</td>
+									<td>$162,700</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<!-- multiple select row Datatable End -->
+				<!-- Export Datatable start -->
+				<div class="pd-20 bg-white border-radius-4 box-shadow mb-30">
+					<div class="clearfix mb-20">
+						<div class="pull-left">
+							<h5 class="text-blue">Data Table with Export Buttons</h5>
+						</div>
+					</div>
+					<div class="row">
+						<table class="stripe hover multiple-select-row data-table-export nowrap">
+							<thead>
+								<tr>
+									<th class="table-plus datatable-nosort">Name</th>
+									<th>Age</th>
+									<th>Office</th>
+									<th>Address</th>
+									<th>Start Date</th>
+									<th>Salart</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="table-plus">Gloria F. Mead</td>
+									<td>25</td>
+									<td>Sagittarius</td>
+									<td>2829 Trainer Avenue Peoria, IL 61602 </td>
+									<td>29-03-2018</td>
+									<td>$162,700</td>
+								</tr>
+								<tr>
+									<td class="table-plus">Andrea J. Cagle</td>
+									<td>30</td>
+									<td>Gemini</td>
+									<td>1280 Prospect Valley Road Long Beach, CA 90802 </td>
+									<td>29-03-2018</td>
+									<td>$162,700</td>
+								</tr>
+								<tr>
+									<td class="table-plus">Andrea J. Cagle</td>
+									<td>20</td>
+									<td>Gemini</td>
+									<td>2829 Trainer Avenue Peoria, IL 61602 </td>
+									<td>29-03-2018</td>
+									<td>$162,700</td>
+								</tr>
+								<tr>
+									<td class="table-plus">Andrea J. Cagle</td>
+									<td>30</td>
+									<td>Sagittarius</td>
+									<td>1280 Prospect Valley Road Long Beach, CA 90802 </td>
+									<td>29-03-2018</td>
+									<td>$162,700</td>
+								</tr>
+								<tr>
+									<td class="table-plus">Andrea J. Cagle</td>
+									<td>25</td>
+									<td>Gemini</td>
+									<td>2829 Trainer Avenue Peoria, IL 61602 </td>
+									<td>29-03-2018</td>
+									<td>$162,700</td>
+								</tr>
+								<tr>
+									<td class="table-plus">Andrea J. Cagle</td>
+									<td>20</td>
+									<td>Sagittarius</td>
+									<td>1280 Prospect Valley Road Long Beach, CA 90802 </td>
+									<td>29-03-2018</td>
+									<td>$162,700</td>
+								</tr>
+								<tr>
+									<td class="table-plus">Andrea J. Cagle</td>
+									<td>18</td>
+									<td>Gemini</td>
+									<td>1280 Prospect Valley Road Long Beach, CA 90802 </td>
+									<td>29-03-2018</td>
+									<td>$162,700</td>
+								</tr>
+								<tr>
+									<td class="table-plus">Andrea J. Cagle</td>
+									<td>30</td>
+									<td>Sagittarius</td>
+									<td>1280 Prospect Valley Road Long Beach, CA 90802 </td>
+									<td>29-03-2018</td>
+									<td>$162,700</td>
+								</tr>
+								<tr>
+									<td class="table-plus">Andrea J. Cagle</td>
+									<td>30</td>
+									<td>Sagittarius</td>
+									<td>1280 Prospect Valley Road Long Beach, CA 90802 </td>
+									<td>29-03-2018</td>
+									<td>$162,700</td>
+								</tr>
+								<tr>
+									<td class="table-plus">Andrea J. Cagle</td>
+									<td>30</td>
+									<td>Gemini</td>
+									<td>1280 Prospect Valley Road Long Beach, CA 90802 </td>
+									<td>29-03-2018</td>
+									<td>$162,700</td>
+								</tr>
+								<tr>
+									<td class="table-plus">Andrea J. Cagle</td>
+									<td>30</td>
+									<td>Gemini</td>
+									<td>1280 Prospect Valley Road Long Beach, CA 90802 </td>
+									<td>29-03-2018</td>
+									<td>$162,700</td>
+								</tr>
+								<tr>
+									<td class="table-plus">Andrea J. Cagle</td>
+									<td>30</td>
+									<td>Gemini</td>
+									<td>1280 Prospect Valley Road Long Beach, CA 90802 </td>
+									<td>29-03-2018</td>
+									<td>$162,700</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<!-- Export Datatable End -->
+			</div>
+			<?php include('include/footer.php'); ?>
+		</div>
+	</div>
+		<!-- js -->
+	<script src="vendors/scripts/script.js"></script>
+	<script src="src/plugins/datatables/media/js/jquery.dataTables.min.js"></script>
+	<script src="src/plugins/datatables/media/js/dataTables.bootstrap4.js"></script>
+	<script src="src/plugins/datatables/media/js/dataTables.responsive.js"></script>
+	<script src="src/plugins/datatables/media/js/responsive.bootstrap4.js"></script>
+	<!-- buttons for Export datatable -->
+	<script src="src/plugins/datatables/media/js/button/dataTables.buttons.js"></script>
+	<script src="src/plugins/datatables/media/js/button/buttons.bootstrap4.js"></script>
+	<script src="src/plugins/datatables/media/js/button/buttons.print.js"></script>
+	<script src="src/plugins/datatables/media/js/button/buttons.html5.js"></script>
+	<script src="src/plugins/datatables/media/js/button/buttons.flash.js"></script>
+	<script src="src/plugins/datatables/media/js/button/pdfmake.min.js"></script>
+	<script src="src/plugins/datatables/media/js/button/vfs_fonts.js"></script>
+	<script>
+		$('document').ready(function(){
+			$('.data-table').DataTable({
+				scrollCollapse: true,
+				autoWidth: false,
+				responsive: true,
+				columnDefs: [{
+					targets: "datatable-nosort",
+					orderable: false,
+				}],
+				"lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+				"language": {
+					"info": "_START_-_END_ of _TOTAL_ entries",
+					searchPlaceholder: "Search"
+				},
+			});
+			$('.data-table-export').DataTable({
+				scrollCollapse: true,
+				autoWidth: false,
+				responsive: true,
+				columnDefs: [{
+					targets: "datatable-nosort",
+					orderable: false,
+				}],
+				"lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+				"language": {
+					"info": "_START_-_END_ of _TOTAL_ entries",
+					searchPlaceholder: "Search"
+				},
+				dom: 'Bfrtip',
+				buttons: [
+				'copy', 'csv', 'pdf', 'print'
+				]
+			});
+			var table = $('.select-row').DataTable();
+			$('.select-row tbody').on('click', 'tr', function () {
+				if ($(this).hasClass('selected')) {
+					$(this).removeClass('selected');
+				}
+				else {
+					table.$('tr.selected').removeClass('selected');
+					$(this).addClass('selected');
+				}
+			});
+			var multipletable = $('.multiple-select-row').DataTable();
+			$('.multiple-select-row tbody').on('click', 'tr', function () {
+				$(this).toggleClass('selected');
+			});
+		});
+	</script>
+</body>
+</html>

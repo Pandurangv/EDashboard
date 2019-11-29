@@ -1,0 +1,54 @@
+﻿
+<div>
+    <h2>Device Notifications</h2>
+    <div class="col-md-12">
+        <div id="chart_div"></div>
+    </div>
+    <div class="col-md-12">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Device Id</th>
+                    <th>Min Voltage</th>
+                    <th>Max Voltage</th>
+                    <th>Sum Cells</th>
+                    <th>IMaster</th>
+                    <th>SoC Internal</th>
+                    <th>Date</th>
+                    <th>Detail</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr data-ng-repeat="device in DeviceMessgesList">
+                    <td>{{device.DeviceId}}</td>
+                    <td>{{device.CellMinVoltage}}</td>
+                    <td>{{device.CellMaxVoltage}}</td>
+                    <td>{{device.PackSumCells}}</td>
+                    <td>{{device.PackIMaster}}</td>
+                    <td>{{device.PackSoCInternal}}</td>
+                    <td>{{device.NotificationDate |mydate| date: 'dd-MM-yyyy'}}</td>
+                    <td><button class="btn btn-danger" data-ng-click="ShowDetails(device)">Details</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="col-md-12">
+        <div class="col-md-6"></div>
+        <div class="col-md-1">
+            <div class="form-group">
+                <select class="form-control" style="margin-top:20px;" id="ddlPageSize">
+                    <option value="5">5</option>
+                    <option value="10">10</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-md-5">
+            <ul class="pager">
+                <li><a href="#">Page No : {{Device.PageNo}}/Pages : {{TotalPages}}/Total Records: {{TotalRecords}}</a></li>
+                <li><a href="#" data-ng-click="Prev()">Previous</a></li>
+                <li><a href="#" data-ng-click="Next()">Next</a></li>
+            </ul>
+        </div>
+
+    </div>
+</div>

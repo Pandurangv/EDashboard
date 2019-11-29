@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="Dashboard-Web.config Connection String" description="Dashboard Connection String used in web.config by the application to access the database." defaultValue="Data Source=tcp:cviot.database.windows.net,1433;Initial Catalog=cvdb;Persist Security Info=True;User ID=cvadmin;Password=Welcome@1" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="F:\\MyApplication\\DeviseElectronics\\EDashboard\\EDashboard\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='Dashboard']/@connectionString" />
+  </parameter>
+  <parameter name="DefaultConnection-Web.config Connection String" description="DefaultConnection Connection String used in web.config by the application to access the database." defaultValue="Data Source=LENOVO-PC\sqlexpress;Initial Catalog=DeviseEAutomation;Integrated Security=false;User Id=sa;Password=ganesh;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="F:\\MyApplication\\DeviseElectronics\\EDashboard\\EDashboard\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+</parameters>

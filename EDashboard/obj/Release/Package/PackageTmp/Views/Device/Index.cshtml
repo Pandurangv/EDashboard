@@ -1,0 +1,245 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="main-container" data-ng-app="EDashboard" data-ng-controller="DeviceController">
+    <div class="pd-ltr-20 customscroll customscroll-10-p height-100-p xs-pd-20-10">
+        <div class="row clearfix progress-box">
+            <div class="col-lg-3 col-md-6 col-sm-12 mb-30">
+                <div class="bg-white pd-20 box-shadow border-radius-5 height-100-p">
+                    <div class="project-info clearfix">
+                        <div class="project-info-left">
+                            <div class="icon box-shadow bg-blue text-white">
+                                <i class="fa fa-briefcase"></i>
+                            </div>
+                        </div>
+                        <div class="project-info-right">
+                            <span class="no text-blue weight-500 font-24">{{NotificationCount.TotalDevices}}</span>
+                        </div>
+                    </div>
+                    <div class="project-info-progress">
+                        <div class="row clearfix">
+                            <div class="col-sm-12 text-muted weight-500">Total Devices</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 mb-30">
+                <div class="bg-white pd-20 box-shadow border-radius-5 height-100-p">
+                    <div class="project-info clearfix">
+                        <div class="project-info-left">
+                            <div class="icon box-shadow bg-light-green text-white">
+                                <i class="fa fa-handshake-o"></i>
+                            </div>
+                        </div>
+                        <div class="project-info-right">
+                            <span class="no text-light-green weight-500 font-24">{{NotificationCount.ActiveDevices}}</span>
+                        </div>
+                    </div>
+                    <div class="project-info-progress">
+                        <div class="row clearfix">
+                            <div class="col-sm-12 text-muted weight-500">Active Devices</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 mb-30">
+                <div class="bg-white pd-20 box-shadow border-radius-5 height-100-p">
+                    <div class="project-info clearfix">
+                        <div class="project-info-left">
+                            <div class="icon box-shadow bg-light-orange text-white">
+                                <i class="fa fa-list-alt"></i>
+                            </div>
+                        </div>
+                        <div class="project-info-right">
+                            <span class="no text-light-orange weight-500 font-24">{{NotificationCount.TotalNotifications}}</span>
+                        </div>
+                    </div>
+                    <div class="project-info-progress">
+                        <div class="row clearfix">
+                            <div class="col-sm-12 text-muted weight-500">Total Notifications</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 mb-30">
+                <div class="bg-white pd-20 box-shadow border-radius-5 margin-5 height-100-p">
+                    <div class="project-info clearfix">
+                        <div class="project-info-left">
+                            <div class="icon box-shadow bg-light-purple text-white">
+                                <i class="fa fa-podcast"></i>
+                            </div>
+                        </div>
+                        <div class="project-info-right">
+                            <span class="no text-light-purple weight-500 font-24">{{NotificationCount.TodaysNotification}}</span>
+                        </div>
+                    </div>
+                    <div class="project-info-progress">
+                        <div class="row clearfix">
+                            <div class="col-sm-12 text-muted weight-500">Todays Notifications</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bg-white pd-20 box-shadow border-radius-5 mb-30">
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-12 xs-mb-20">
+                    <div>
+                        <h2>Device Notifications</h2>
+                        <div class="row">
+                            <div class="col-sm-12 col-md-1">
+                                <select class="form-control" style="width:75px;" id="ddlPageSize" data-ng-click="PageSizeChanged()">
+                                    <option value="50" selected="selected">50</option>
+                                    <option value="100">100</option>
+                                </select>
+                            </div>
+                            <div class="col-sm-12 col-md-7">
+                                <div class="dataTables_info" id="DataTables_Table_0_info" role="status" aria-live="polite" style="margin-top:8px;">
+                                    {{Device.PageNo}}-{{Device.PageSize}} of {{TotalPages}} Pages
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-md-4">
+                                <div class="dataTables_paginate paging_simple_numbers">
+                                    <ul class="pagination">
+                                        <li><a data-ng-click="first()" href="#" class="page-link">First</a></li>
+                                        <li><a data-ng-click="previous()" href="#" class="page-link">Previous</a></li>
+                                        <li><a data-ng-click="next()" class="page-link">Next</a></li>
+                                        <li><a data-ng-click="last()" class="page-link">Last</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Device Id</th>
+                                        <th>BMS Charge</th>
+                                        <th>BMS Discharge</th>
+                                        <th>BMS Max Temp</th>
+                                        <th>Battery Voltage</th>
+                                        <th>Date</th>
+                                        <th>Detail</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr data-ng-repeat="device in DeviceMessgesList">
+                                        <td>{{device.DeviceId}}</td>
+                                        <td>{{device.BMSCharge}}</td>
+                                        <td>{{device.BMSDischarge}}</td>
+                                        <td>{{device.BMSMaxTemp}}</td>
+                                        <td>{{device.BatteryVoltage}}</td>
+                                        <td>{{device.CreatedDate |mydate| date: 'dd-MM-yyyy hh:mm:ss'}}</td>
+                                        <td><button class="btn btn-danger" data-ng-click="ShowDetails(device)">Details</button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12 col-md-1">
+                                <select class="form-control" style="width:75px;" id="ddlPageSize" data-ng-click="PageSizeChanged()">
+                                    <option value="50" selected="selected">50</option>
+                                    <option value="100">100</option>
+                                </select>
+                            </div>
+                            <div class="col-sm-12 col-md-7">
+                                <div class="dataTables_info" id="DataTables_Table_0_info" role="status" aria-live="polite" style="margin-top:8px;">
+                                    {{Device.PageNo}}-{{Device.PageSize}} of {{TotalPages}} Pages
+                                </div>
+                            </div>
+                        <div class="col-sm-12 col-md-4">
+                            <div class="dataTables_paginate paging_simple_numbers" id="DataTables_Table_0_paginate">
+                                <ul class="pagination">
+                                    <li><a data-ng-click="first()" href="#" class="page-link">First</a></li>
+                                    <li><a data-ng-click="previous()" href="#" class="page-link">Previous</a></li>
+                                    <li><a data-ng-click="next()" class="page-link">Next</a></li>
+                                    <li><a data-ng-click="last()" class="page-link">Last</a></li>
+                                </ul>
+                            </div>
+                           </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="Medium-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="myLargeModalLabel">Notification Details</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr><th>BMSCharge</th><th>{{selectedDevice.BMSCharge}}</th></tr>
+                                    <tr>
+                                        <th>BMSDischarge</th>
+                                        <th>{{selectedDevice.BMSDischarge}}</th>
+                                    </tr>
+                                    <tr>
+                                        <th>BMSFullCap</th>
+                                        <th>{{selectedDevice.BMSFullCap}}</th>
+                                    </tr>
+                                    <tr>
+                                        <th>BMSMOTemp</th>
+                                        <th>{{selectedDevice.BMSMOTemp}}</th>
+                                    </tr>
+                                    <tr>
+                                        <th>BMSMaxTemp</th>
+                                        <th>{{selectedDevice.BMSMaxTemp}}</th>
+                                    </tr>
+                                    <tr>
+                                        <th>BMSMaxVol</th>
+                                        <th>{{selectedDevice.BMSMaxVol}}</th>
+                                    </tr>
+                                    <tr>
+                                        <th>BMSMinTemp</th>
+                                        <th>{{selectedDevice.BMSMinTemp}}</th>
+                                    </tr>
+                                    <tr>
+                                        <th>BMSMinVol</th>
+                                        <th>{{selectedDevice.BMSMinVol}}</th>
+                                    </tr>
+                                    <tr>
+                                        <th>BatteryCurrent</th>
+                                        <th>{{selectedDevice.BatteryCurrent}}</th>
+                                    </tr>
+                                    <tr>
+                                        <th>BatteryState</th>
+                                        <th>{{selectedDevice.BatteryState}}</th>
+                                    </tr>
+                                    <tr>
+                                        <th>BatteryStatus</th>
+                                        <th>{{selectedDevice.BatteryStatus}}</th>
+                                    </tr>
+                                    <tr>
+                                        <th>BatteryVoltage</th>
+                                        <th>{{selectedDevice.BatteryVoltage}}</th>
+                                    </tr>
+                                    <tr>
+                                        <th>ChargerCurrent</th>
+                                        <th>{{selectedDevice.ChargerCurrent}}</th>
+                                    </tr>
+                                    <tr>
+                                        <th>ControllerTemp</th>
+                                        <th>{{selectedDevice.ControllerTemp}}</th>
+                                    </tr>
+                                    <tr>
+                                </thead>
+                            </table>
+                        </p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+
