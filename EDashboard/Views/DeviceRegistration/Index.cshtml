@@ -1,0 +1,157 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="main-container" data-ng-app="EDashboard" data-ng-controller="DeviceMasterController">
+    <div class="pd-ltr-20 customscroll customscroll-10-p height-100-p xs-pd-20-10">
+        <div class="row clearfix progress-box">
+            <div class="col-lg-3 col-md-6 col-sm-12 mb-30">
+                <div class="bg-white pd-20 box-shadow border-radius-5 height-100-p">
+                    <div class="project-info clearfix">
+                        <div class="project-info-left">
+                            <div class="icon box-shadow bg-blue text-white">
+                                <i class="fa fa-briefcase"></i>
+                            </div>
+                        </div>
+                        <div class="project-info-right">
+                            <span class="no text-blue weight-500 font-24">{{NotificationCount.TotalDevices}}</span>
+                        </div>
+                    </div>
+                    <div class="project-info-progress">
+                        <div class="row clearfix">
+                            <div class="col-sm-12 text-muted weight-500">Total Devices</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 mb-30">
+                <div class="bg-white pd-20 box-shadow border-radius-5 height-100-p">
+                    <div class="project-info clearfix">
+                        <div class="project-info-left">
+                            <div class="icon box-shadow bg-light-green text-white">
+                                <i class="fa fa-handshake-o"></i>
+                            </div>
+                        </div>
+                        <div class="project-info-right">
+                            <span class="no text-light-green weight-500 font-24">{{NotificationCount.ActiveDevices}}</span>
+                        </div>
+                    </div>
+                    <div class="project-info-progress">
+                        <div class="row clearfix">
+                            <div class="col-sm-12 text-muted weight-500">Active Devices</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 mb-30">
+                <div class="bg-white pd-20 box-shadow border-radius-5 height-100-p">
+                    <div class="project-info clearfix">
+                        <div class="project-info-left">
+                            <div class="icon box-shadow bg-light-orange text-white">
+                                <i class="fa fa-list-alt"></i>
+                            </div>
+                        </div>
+                        <div class="project-info-right">
+                            <span class="no text-light-orange weight-500 font-24">{{NotificationCount.TotalNotifications}}</span>
+                        </div>
+                    </div>
+                    <div class="project-info-progress">
+                        <div class="row clearfix">
+                            <div class="col-sm-12 text-muted weight-500">Total Notifications</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 mb-30">
+                <div class="bg-white pd-20 box-shadow border-radius-5 margin-5 height-100-p">
+                    <div class="project-info clearfix">
+                        <div class="project-info-left">
+                            <div class="icon box-shadow bg-light-purple text-white">
+                                <i class="fa fa-podcast"></i>
+                            </div>
+                        </div>
+                        <div class="project-info-right">
+                            <span class="no text-light-purple weight-500 font-24">{{NotificationCount.TodaysNotification}}</span>
+                        </div>
+                    </div>
+                    <div class="project-info-progress">
+                        <div class="row clearfix">
+                            <div class="col-sm-12 text-muted weight-500">Todays Notifications</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bg-white pd-20 box-shadow border-radius-5 mb-30">
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-lg-12">
+                    <div class="row">
+                        <h2>Device Registration</h2>
+                        <div class="col-md-12" data-ng-show="Details==true">
+                            <div class="row">
+                                <div class="col-sm-12 col-md-12">
+                                    <button type="button" class="btn btn-danger" data-ng-click="addDevice()">Add New</button>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>Device Id</th>
+                                            <th>Device Name</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr data-ng-repeat="device in DeviceList">
+                                            <td>{{device.DeviceId}}</td>
+                                            <td>{{device.DeviceName}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12 col-md-1">
+                                    <select class="form-control" style="width:75px;" id="ddlPageSize" data-ng-click="PageSizeChanged()">
+                                        <option value="10" selected="selected">10</option>
+                                        <option value="50">50</option>
+                                    </select>
+                                </div>
+                                <div class="col-sm-12 col-md-7">
+                                    <div class="dataTables_info" id="DataTables_Table_0_info" role="status" aria-live="polite" style="margin-top:8px;">
+                                        {{Device.PageNo}}-{{Device.PageSize}} of {{TotalPages}} Pages
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 col-md-4">
+                                    <div class="dataTables_paginate paging_simple_numbers" id="DataTables_Table_0_paginate">
+                                        <ul class="pagination">
+                                            <li><a data-ng-click="first()" href="#" class="page-link">First</a></li>
+                                            <li><a data-ng-click="previous()" href="#" class="page-link">Previous</a></li>
+                                            <li><a data-ng-click="next()" class="page-link">Next</a></li>
+                                            <li><a data-ng-click="last()" class="page-link">Last</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-12 col-lg-12 xs-mb-20" data-ng-show="SaveData==true">
+                            <div class="col-sm-12 col-md-12 col-lg-12 xs-mb-20">
+                                <div class="col-sm-6 col-md-6 col-lg-6 xs-mb-6">
+                                    <input type="text" class="form-control" placeholder="Devise Id" maxlength="50" data-ng-model="Device.DeviceId" />
+                                </div>
+                                <br />
+                                <div class="col-sm-6 col-md-6 col-lg-6 xs-mb-6">
+                                    <input type="text" class="form-control" placeholder="Devise Name" maxlength="50" data-ng-model="Device.DeviceName" />
+                                </div>
+                                <br />
+                                <div class="col-sm-6 col-md-6 col-lg-6 xs-mb-6">
+                                    <button type="button" class="btn btn-danger" data-ng-click="insertDevice()">Register</button>
+                                    <button type="button" class="btn btn-danger" data-ng-click="cancelDevice()">Cancel</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
