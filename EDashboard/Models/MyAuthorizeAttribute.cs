@@ -15,32 +15,9 @@ namespace EDashboard.Models
 
         public override void OnActionExecuting(ActionExecutingContext filterContext)
         {
-            var token=filterContext.HttpContext.Request.Headers["Token"];
-            HttpCookie cookie = filterContext.HttpContext.Request.Cookies["Token"];
             if (filterContext.HttpContext.Request.IsAjaxRequest())
             {
-                if (token != null)
-                {
-                    string authtoken= Convert.ToString(filterContext.HttpContext.Request.Headers["Token"]);
-                    if (ValidateAuthToken(authtoken)) {
-                        HttpCookie StudentCookies = new HttpCookie("Token");
-                        StudentCookies.Value = authtoken;
-                        StudentCookies.Expires = DateTime.Now.AddHours(1);
-                        filterContext.HttpContext.Response.SetCookie(StudentCookies);
-                        return;
-                    }
-                    else
-                    {
-                        Error error = new Error();
-                        error.ResponseStatus = 2;
-                        filterContext.Result = new JsonResult
-                        {
-                            Data = error,
-                            JsonRequestBehavior = JsonRequestBehavior.AllowGet
-                        };
-                    }
-                }
-                else
+                if (SessionManager.Instance.LoginUser == null)
                 {
                     Error error = new Error();
                     error.ResponseStatus = 2;
@@ -50,10 +27,14 @@ namespace EDashboard.Models
                         JsonRequestBehavior = JsonRequestBehavior.AllowGet
                     };
                 }
+                else
+                {
+                    return;
+                }
             }
             else
             {
-                if (cookie==null)
+                if (SessionManager.Instance.LoginUser==null)
                 {
                     filterContext.HttpContext.Response.Cookies.Clear();
                     var redirectTarget = new System.Web.Routing.RouteValueDictionary(new { action = "Index", controller = "Home", area = "" });
@@ -61,39 +42,7 @@ namespace EDashboard.Models
                 }
                 else
                 {
-                    string authtoken = cookie.Value;
-                    if (string.IsNullOrEmpty(authtoken))
-                    {
-                        filterContext.HttpContext.Response.Cookies.Clear();
-                        //var redirectTarget = new System.Web.Routing.RouteValueDictionary(new { action = "Index", controller = "Home", area = "" });
-                        Error error = new Error();
-                        error.ResponseStatus = 2;
-                        filterContext.Result = new JsonResult
-                        {
-                            Data = error,
-                            JsonRequestBehavior = JsonRequestBehavior.AllowGet
-                        };
-                    }
-                    else if (ValidateAuthToken(authtoken))
-                    {
-                        HttpCookie StudentCookies = new HttpCookie("Token");
-                        StudentCookies.Value = authtoken;
-                        StudentCookies.Expires = DateTime.Now.AddHours(1);
-                        filterContext.HttpContext.Response.SetCookie(StudentCookies);
-                        return;
-                    }
-                    else
-                    {
-                        filterContext.HttpContext.Response.Cookies.Clear();
-                        //var redirectTarget = new System.Web.Routing.RouteValueDictionary(new { action = "Index", controller = "Home", area = "" });
-                        Error error = new Error();
-                        error.ResponseStatus = 2;
-                        filterContext.Result = new JsonResult
-                        {
-                            Data = error,
-                            JsonRequestBehavior = JsonRequestBehavior.AllowGet
-                        };
-                    }
+                    return;
                 }
             }
             

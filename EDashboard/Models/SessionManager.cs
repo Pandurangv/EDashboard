@@ -25,7 +25,26 @@ namespace EDashboard.Models
             }
         }
 
-        
+
+        public LoginViewModel LoginUser
+        {
+            get
+            {
+                LoginViewModel emp = null;
+                if (HttpContext.Current.Session["AuthUser"] != null)
+                {
+                    emp = (LoginViewModel)HttpContext.Current.Session["AuthUser"];
+                }
+                return emp;
+            }
+            set
+            {
+                HttpContext.Current.Session["AuthUser"] = value;
+            }
+        }
+
 
     }
+
+    
 }

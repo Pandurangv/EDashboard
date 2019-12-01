@@ -140,11 +140,30 @@
         getNotifications();
     }
 
+    function GetDeviceList() {
+        ShowLoader();
+        $http({
+            method: 'post',
+            url: $scope.urlBase + '/DeviceRegistration/GetDeviceList'
+        }).then(function (response) {
+            HideLoader();
+            var DeviceList = response.data;
+            var html="";
+            angular.forEach(DeviceList, function (value, key) {
+                html += "<option value='" + value.DeviceRegId + "'>" + value.DeviceId + "<option>";
+            });
+            $("#ddlDevices").html(html);
+        }, function (error) {
+            HideLoader();
+        })
+    }
+
     $scope.init=function(){
         $scope.urlBase = GetVirtualDirectory();
         $("#ddlPageSize").val(50);
         $scope.Device.PageSize = $("#ddlPageSize").val();
         $scope.Device.PageNo = 1;
+        GetDeviceList();
         getNotifications();
         getNotificationCount();
     }

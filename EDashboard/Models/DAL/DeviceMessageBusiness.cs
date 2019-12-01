@@ -11,6 +11,17 @@ namespace EDashboard.Models.DAL
     public class DeviceMessageBusiness
     {
         SettingsHelper objHelper = SettingsHelper.Instance;
+
+        public LoginViewModel LoginUser(LoginViewModel model)
+        {
+            List<SqlParameter> lst = new List<SqlParameter>();
+            lst.Add(new SqlParameter() { ParameterName = "@Email", Value = model.Email });
+            lst.Add(new SqlParameter() { ParameterName = "@Password", Value = model.Password });
+            DataTable dt = objHelper.GetDataTable("LoginUser", lst);
+            var lstUser =dt.ToList<LoginViewModel>();
+            return lstUser[0];
+        }
+
         public List<HPDeviceDetails> GetAllMessages(HPDeviceDetails model)
         {
             List<SqlParameter> lst = new List<SqlParameter>();
@@ -45,10 +56,24 @@ namespace EDashboard.Models.DAL
 
         public List<Device> Get_DeviceList(Device model)
         {
+            DataTable dt = new DataTable();
             List<SqlParameter> lst = new List<SqlParameter>();
-            lst.Add(new SqlParameter() { ParameterName = "@PageNo", Value = model.PageNo });
-            lst.Add(new SqlParameter() { ParameterName = "@PageSize", Value = model.PageSize });
-            DataTable dt = objHelper.GetDataTable("Get_DeviceList", lst);
+            if (model.PageNo>0)
+            {
+                lst.Add(new SqlParameter() { ParameterName = "@PageNo", Value = model.PageNo });
+            }
+            if (model.PageSize>0)
+            {
+                lst.Add(new SqlParameter() { ParameterName = "@PageSize", Value = model.PageSize });
+            }
+            if (model.PageSize>0 && model.PageNo>0)
+            {
+                dt = objHelper.GetDataTable("Get_DeviceList", lst);
+            }
+            else
+            {
+                dt = objHelper.GetDataTable("Get_DeviceList");
+            }
             return dt.ToList<Device>();
         }
 

@@ -46,20 +46,24 @@ namespace EDashboard.Models
         public string Email { get; set; }
     }
 
-    public class LoginViewModel
+    public class LoginViewModel :Error
     {
-        [Required]
-        [Display(Name = "Email")]
-        [EmailAddress]
+        
         public string Email { get; set; }
 
-        [Required]
-        [DataType(DataType.Password)]
-        [Display(Name = "Password")]
+        
         public string Password { get; set; }
 
-        [Display(Name = "Remember me?")]
-        public bool RememberMe { get; set; }
+        
+        public bool Authorised { get; set; }
+
+        public string FirstName { get; set; }
+
+        public string MiddleName { get; set; }
+
+        public string LastName { get; set; }
+
+
     }
 
     public class RegisterViewModel

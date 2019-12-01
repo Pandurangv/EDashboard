@@ -1,4 +1,5 @@
-﻿using EDashboard.Models.BAL;
+﻿using EDashboard.Models;
+using EDashboard.Models.BAL;
 using EDashboard.Models.DAL;
 using System;
 using System.Collections.Generic;
@@ -11,6 +12,7 @@ namespace EDashboard.Controllers
     public class DeviceController : Controller
     {
         // GET: Device
+        [MyAuthorize]
         public ActionResult Index()
         {
             return View();

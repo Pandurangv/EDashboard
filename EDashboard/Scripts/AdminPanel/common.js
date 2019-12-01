@@ -1,5 +1,23 @@
 ﻿
-
+function LoginUser()
+{
+    ShowLoader();
+    var LoginModal = { Email: $("#txtemail").val(), Password: $("#txtpw").val() };
+    $.ajax({
+        type: "Post",
+        url: GetVirtualDirectory() + '/Account/Login',
+        contentType: "application/json;",
+        data:LoginModal,
+        success: function (r) {
+            HideLoader();
+            window.location = GetVirtualDirectory() + "/Device/Index";
+        },
+        error: function (xhr, ajaxOptions, thrownError) {
+            alert('Error during process: \n' + xhr.responseText);
+            HideLoader();
+        }
+    });
+}
 
 
 function getToken()
@@ -121,8 +139,8 @@ function GetVirtualDirectory() {
             result = result + "//";
         }
     }
-    //return result +"/Edashboard";
-    return "https://cviot.azurewebsites.net/";
+    return result +"/Edashboard";
+    //return "https://cviot.azurewebsites.net/";
 }
 function SetActiveTab(tabname) {
     switch (tabname) {

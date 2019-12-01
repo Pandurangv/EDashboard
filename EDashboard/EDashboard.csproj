@@ -274,6 +274,7 @@
     <Content Include="Content\images\safari.png" />
     <Content Include="Content\images\success.png" />
     <Content Include="Content\images\upload-file-img.jpg" />
+    <Content Include="Content\images\varmalaloader.gif" />
     <Content Include="Content\Views\device.html" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
