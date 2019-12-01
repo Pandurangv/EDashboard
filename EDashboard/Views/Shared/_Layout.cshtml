@@ -20,7 +20,7 @@
         <div class="header-right">
             <div class="brand-logo">
                 <a href="index.php">
-                    <img src="@Url.Content("~/Content/images/logo.png")" alt="" class="mobile-logo">
+                    <img src="@Url.Content("~/Content/images/hmillogo.png")" alt="" class="mobile-logo">
                 </a>
             </div>
             <div class="menu-icon">
@@ -49,20 +49,21 @@
     <div class="left-side-bar">
         <div class="brand-logo">
             <a href="index.php">
-                <img src="@Url.Content("~/Content/images/deskapp-logo.png")" alt="">
+                <img src="@Url.Content("~/Content/images/hmillogo.png")" alt="">
             </a>
         </div>
         <div class="menu-block customscroll">
             <div class="sidebar-menu">
                 <ul id="accordion-menu">
-                    <li class="dropdown">
-                        <a href="javascript:;" class="dropdown-toggle">
-                            <span class="fa fa-home"></span><span class="mtext">Masters</span>
+                    <li>
+                        <a href="@Url.Action("Index","DeviceRegistration")" class="dropdown-toggle">
+                            <span class="fa fa-home"></span><span class="mtext">Device Master</span>
                         </a>
-                        <ul class="submenu">
-                            <li><a href="index.php">Devise Registration</a></li>
-                            <li><a href="index2.php">Dashboard style 2</a></li>
-                        </ul>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("Index","Device")" class="dropdown-toggle">
+                            <span class="fa fa-home"></span><span class="mtext">Dashboard</span>
+                        </a>
                     </li>
                     
                 </ul>
@@ -79,6 +80,7 @@
     @Scripts.Render("~/Scripts/AdminPanel/ShowCustomAlert.js")
     @Scripts.Render("~/Scripts/AdminPanel/script.js")
     @Scripts.Render("~/Scripts/AdminPanel/vmenu.js")
+    @Scripts.Render("~/Scripts/AdminPanel/DeviceMasterController.js")
     @Scripts.Render("~/Scripts/AdminPanel/DeviceController.js")
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     @RenderSection("scripts", required: false)

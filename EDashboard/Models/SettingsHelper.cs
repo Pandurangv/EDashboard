@@ -53,6 +53,42 @@ namespace EDashboard.Models
 
         }
 
+        public int ExecuteCommand(string spName, List<SqlParameter> sqlParam = null)
+        {
+            int success = 0;
+            //DataTable ldt = new DataTable();
+            try
+            {
+                log.Info("Calling SP" + spName);
+                SqlCommand msqlcmd = new SqlCommand();
+                msqlcmd.Connection = Connection;
+                msqlcmd.CommandType = CommandType.StoredProcedure;
+                msqlcmd.CommandText = spName;
+                if (sqlParam != null)
+                {
+                    if (sqlParam.Count > 0)
+                    {
+                        for (int i = 0; i < sqlParam.Count; i++)
+                        {
+                            msqlcmd.Parameters.Add(sqlParam[i]);
+                        }
+                    }
+                }
+                //SqlDataAdapter msqlsda = new SqlDataAdapter(msqlcmd);
+                //msqlsda.Fill(ldt);
+                success= msqlcmd.ExecuteNonQuery();
+                msqlcmd.Parameters.Clear();
+                //msqlsda.Dispose();
+                Connection.Close();
+                Connection.Dispose();
+                msqlcmd.Dispose();
+            }
+            catch (Exception ex)
+            {
+                log.Error("Calling SP" + spName + ex.Message);
+            }
+            return success;
+        }
 
         public DataTable GetDataTable(string spName, List<SqlParameter> sqlParam = null)
         {

@@ -114,6 +114,11 @@ namespace EDashboard.Models.BAL
 
         public string DeviceName { get; set; }
 
+        public string IOTConnectionString { get; set; }
+        public string IOTConnectionString1 { get; set; }
+        public string IOTConnectionString2 { get; set; }
+        public string IOTConnectionString3 { get; set; }
+
         public bool? IsDelete { get; set; }
 
         public DateTime? CreatedDate { get; set; }

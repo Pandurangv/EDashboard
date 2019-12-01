@@ -201,6 +201,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\DeviceController.cs" />
+    <Compile Include="Controllers\DeviceRegistrationController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -239,6 +240,7 @@
     <Content Include="Content\images\edge.png" />
     <Content Include="Content\images\error-bg.jpg" />
     <Content Include="Content\images\firefox.png" />
+    <Content Include="Content\images\hmillogo.png" />
     <Content Include="Content\images\img.jpg" />
     <Content Include="Content\images\img1.jpg" />
     <Content Include="Content\images\img2.jpg" />
@@ -286,6 +288,7 @@
     <Content Include="Scripts\AdminPanel\collapse.js" />
     <Content Include="Scripts\AdminPanel\common.js" />
     <Content Include="Scripts\AdminPanel\DeviceController.js" />
+    <Content Include="Scripts\AdminPanel\DeviceMasterController.js" />
     <Content Include="Scripts\AdminPanel\dropdown.js" />
     <Content Include="Scripts\AdminPanel\highcharts\highcharts-more.js" />
     <Content Include="Scripts\AdminPanel\highcharts\highcharts.js" />
@@ -363,6 +366,7 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Views\Device\Index.cshtml" />
+    <Content Include="Views\DeviceRegistration\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
